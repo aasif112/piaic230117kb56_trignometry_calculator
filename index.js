@@ -1,12 +1,12 @@
 #! /usr/bin/env node
 import inquirer from "inquirer";
 const angle = await inquirer.prompt([
+    { mesaage: "Select trignometric ratio you want to calculate:",
+        type: "list", name: "trigRatio",
+        choices: ["sin", "cos", "tan", "cosec", "sec", "cot"] },
     { message: "Enter angle value:", type: "number", name: 'angleValue' },
     { message: "Angle value is in:", type: "list", name: "angleUnit",
         choices: ["degree", "radian"] },
-    { mesaage: "Select trignometric ratio you want to calculate:",
-        type: "list", name: "trigRatio",
-        choices: ["sin", "cos", "tan", "cosec", "sec", "cot"] }
 ]);
 // Based on angle unit selection: Angle value entred and its unit show on top. Also converted in other unit and show on top 
 if (angle.angleUnit === "degree") {

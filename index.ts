@@ -8,12 +8,14 @@ const angle = await inquirer.prompt([
         choices:["degree", "radian"]    },
     {mesaage: "Select trignometric ratio you want to calculate:",
         type:"list", name:"trigRatio", 
-        choices: ["sin", "cos", "tan", "cosec", "sec", "cot"]   }
+        choices: ["convert degree to radian", "sin", "cos", "tan", "cosec", "sec", "cot"]   },
 ])
 
 // Based on angle unit selection: Angle value entred and its unit show on top. Also converted in other unit and show on top 
+if(angle.trigRatio === "convert degree to radian") {
+}
 
-if (angle.angleUnit=== "degree") {
+if (angle.angleUnit === "degree") {
     const angleDeg:number = (angle.angleValue*(Math.PI/180))
     console.log(`angle is ${angle.angleValue} degree`)
     console.log(`${angle.angleValue} degree = ${angleDeg} radian`)
